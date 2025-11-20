@@ -1,124 +1,121 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 
 function Navbar() {
+	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
 	return (
-		<div
-			className="max-sm:container sm:px-6 md:px-10 xl:px-0 h-12 xl:h-16 flex
-      justify-between items-center lg:text-sm text-black"
-		>
-			<div className="md:px-10">
-				<div className="w-40 h-6" data-nosnippet="">
-					<Link
-						aria-label="Framework homepage"
-						title="Framework Home"
-						className="focus:accent-blue active:text-primary-pressed disabled:utility-outline-disabled focus:text-primary-pressed hover:text-primary-hover text-on-surface underline"
-						href="/"
-					>
-						<Image
-							alt="Framework logo"
-							width={160}
-							height={21}
-							className="filter brightness-0"
-							src="/logo-c1ae78bbc66fed63092c4b9c39c0258f27ab7e2938efc03883bb1a5c73f1a632.svg"
-						/>
-					</Link>
-				</div>
-			</div>
-			<div className="hidden xl:flex h-full w-full md:px-4">
-				<div className="hidden w-full h-full my-auto lg:flex justify-between">
-					<div className="lg:flex">
-						<nav className="hero-component hidden lg:flex group">
-							<span className="xl:flex xl:items-center xl:px-3 h-full font-medium group-focus-within:text-primary">
-								<a
-									className="focus:accent-blue cursor-pointer xl:link-hover primary-on-hover group-hover:text-primary hover:no-underline flex h-full items-center"
-									aria-label="Framework Desktop"
-									aria-hidden="true"
-									href="/desktop"
-								>
-									Desktop
-								</a>
-							</span>
-						</nav>
-
-						<nav className="hero-component hidden lg:flex group">
-							<span className="xl:flex xl:items-center xl:px-3 h-full font-medium group-focus-within:text-primary">
-								<a
-									className="focus:accent-blue cursor-pointer xl:link-hover primary-on-hover group-hover:text-primary hover:no-underline flex h-full items-center"
-									aria-label="Framework Laptop 12"
-									aria-hidden="true"
-									href="/laptop12"
-								>
-									Laptop 12
-								</a>
-							</span>
-						</nav>
-
-						<nav className="hero-component hidden lg:flex group">
-							<span className="xl:flex xl:items-center xl:px-3 h-full font-medium group-focus-within:text-primary">
-								<a
-									className="focus:accent-blue cursor-pointer xl:link-hover primary-on-hover group-hover:text-primary hover:no-underline flex h-full items-center"
-									aria-label="Framework Laptop 13"
-									aria-hidden="true"
-									href="/laptop13"
-								>
-									Laptop 13
-								</a>
-							</span>
-						</nav>
-
-						<nav className="hero-component hidden lg:flex group">
-							<span className="xl:flex xl:items-center xl:px-3 h-full font-medium group-focus-within:text-primary">
-								<a
-									className="focus:accent-blue cursor-pointer xl:link-hover primary-on-hover group-hover:text-primary hover:no-underline flex h-full items-center"
-									aria-label="Framework Laptop 16"
-									aria-hidden="true"
-									href="/laptop16"
-								>
-									Laptop 16
-								</a>
-							</span>
-						</nav>
+		<nav className="w-full bg-white shadow-sm">
+			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div className="flex justify-between items-center h-16">
+					<div className="shrink-0">
+						<Link
+							aria-label="Framework homepage"
+							title="Framework Home"
+							className="navbar-logo-link"
+							href="/"
+						>
+							<Image
+								alt="Framework logo"
+								width={160}
+								height={21}
+								className="filter brightness-0 h-6 w-auto"
+								src="/logo-c1ae78bbc66fed63092c4b9c39c0258f27ab7e2938efc03883bb1a5c73f1a632.svg"
+							/>
+						</Link>
 					</div>
-					<div className="lg:flex">
-						<nav className="dropdown-component hidden lg:flex group">
-							<span className="xl:flex xl:items-center xl:px-3 h-full font-medium group-focus-within:text-primary">
-								<a
-									className="focus:accent-blue cursor-pointer xl:link-hover primary-on-hover group-hover:text-primary hover:no-underline flex h-full items-center"
-									aria-label="Support"
-									aria-hidden="true"
-									href="/support"
-								>
-									Support
-								</a>
-							</span>
-						</nav>
 
-						<span className="xl:flex xl:items-center xl:px-3 h-full font-medium focus-within:text-primary">
-							<a
-								className="focus:accent-blue cursor-pointer xl:link-hover primary-on-hover group-hover:text-primary hover:no-underline flex h-full items-center"
-								aria-label="Framework for Business"
-								href="/framework-for-business"
-							>
-								For Business
-							</a>
-						</span>
-						<nav className="dropdown-component hidden lg:flex group">
-							<span className="xl:flex xl:items-center xl:px-3 h-full font-medium group-focus-within:text-primary">
-								<a
-									className="focus:accent-blue cursor-pointer xl:link-hover primary-on-hover group-hover:text-primary hover:no-underline flex h-full items-center"
-									aria-label="About Framework"
-									aria-hidden="true"
-									href="/about"
-								>
-									About
-								</a>
-							</span>
-						</nav>
+					<div className="hidden lg:flex lg:items-center lg:space-x-1">
+						<div className="flex items-center space-x-1">
+							<Link href="/desktop" className="navbar-link">
+								Desktop
+							</Link>
+							<Link href="/laptop12" className="navbar-link">
+								Laptop 12
+							</Link>
+							<Link href="/laptop13" className="navbar-link">
+								Laptop 13
+							</Link>
+							<Link href="/laptop16" className="navbar-link">
+								Laptop 16
+							</Link>
+						</div>
+
+						<div className="h-6 w-px bg-gray-300 mx-2"></div>
+
+						<div className="flex items-center space-x-1">
+							<Link href="/about" className="navbar-link">
+								About
+							</Link>
+						</div>
+					</div>
+
+					<div className="lg:hidden">
+						<button
+							type="button"
+							onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+							className="navbar-menu-button"
+							aria-expanded={mobileMenuOpen}
+							aria-label="Toggle menu"
+						>
+							<span className="sr-only">Open main menu</span>
+							{!mobileMenuOpen ? (
+								<Menu className="h-6 w-6" />
+							) : (
+								<X className="h-6 w-6" />
+							)}
+						</button>
 					</div>
 				</div>
 			</div>
-		</div>
+
+			{mobileMenuOpen && (
+				<div className="lg:hidden border-t border-gray-200">
+					<div className="px-2 pt-2 pb-3 space-y-1">
+						<Link
+							href="/desktop"
+							className="navbar-mobile-link"
+							onClick={() => setMobileMenuOpen(false)}
+						>
+							Desktop
+						</Link>
+						<Link
+							href="/laptop12"
+							className="navbar-mobile-link"
+							onClick={() => setMobileMenuOpen(false)}
+						>
+							Laptop 12
+						</Link>
+						<Link
+							href="/laptop13"
+							className="navbar-mobile-link"
+							onClick={() => setMobileMenuOpen(false)}
+						>
+							Laptop 13
+						</Link>
+						<Link
+							href="/laptop16"
+							className="navbar-mobile-link"
+							onClick={() => setMobileMenuOpen(false)}
+						>
+							Laptop 16
+						</Link>
+						<div className="border-t border-gray-200 my-2"></div>
+						<Link
+							href="/about"
+							className="navbar-mobile-link"
+							onClick={() => setMobileMenuOpen(false)}
+						>
+							About
+						</Link>
+					</div>
+				</div>
+			)}
+		</nav>
 	);
 }
 
