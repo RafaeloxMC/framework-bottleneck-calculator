@@ -40,3 +40,17 @@ body {
 .navbar-logo-link {
 	@apply focus:outline-none focus:ring-2 focus:ring-orange-500 rounded;
 }
+
+@font-face {
+	font-family: "Pixeloid Sans FW";
+	src: url("/pixeloid_sans_fw.otf") format("opentype");
+	font-weight: 100 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+.font-framework-pixel {
+	font-family: "Pixeloid Sans FW", ui-sans-serif, system-ui, -apple-system,
+		"Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
