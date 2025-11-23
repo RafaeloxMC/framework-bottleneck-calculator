@@ -303,6 +303,8 @@ function Configure() {
 											)}
 
 										{currentConfig.secondary_storage &&
+											currentConfig.secondary_storage
+												.length > 0 &&
 											renderSelectField(
 												"Secondary Storage",
 												currentConfig.secondary_storage,
