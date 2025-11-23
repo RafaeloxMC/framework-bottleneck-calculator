@@ -1,0 +1,1004 @@
+{
+	"12": [
+		{
+			"name": "13th Gen Intel® Core™",
+			"price": 569,
+			"cpu": [
+				{
+					"name": "i3-1315U",
+					"cores": 6,
+					"speed": 4.5,
+					"price": 0
+				},
+				{
+					"name": "i5-1334U",
+					"cores": 10,
+					"speed": 4.6,
+					"price": 170
+				}
+			],
+			"ram": [
+				{
+					"name": "None (bring your own)",
+					"kit": "0 x 0",
+					"technology": "N/A",
+					"frequency": 0,
+					"price": 0
+				},
+				{
+					"size": 8,
+					"kit": "1 x 8",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 45
+				},
+				{
+					"size": 16,
+					"kit": "1 x 16",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 90
+				},
+				{
+					"size": 32,
+					"kit": "1 x 32",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 180
+				},
+				{
+					"size": 48,
+					"kit": "1 x 48",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 270
+				}
+			],
+			"primary_storage": [
+				{
+					"name": "None (bring your own)",
+					"size": 0,
+					"price": 0
+				},
+				{
+					"name": "WD_BLACK™ SN770M NVMe™",
+					"size": 500,
+					"price": 109
+				},
+				{
+					"name": "WD_BLACK™ SN770M NVMe™",
+					"size": 1024,
+					"price": 179
+				},
+				{
+					"name": "WD_BLACK™ SN770M NVMe™",
+					"size": 2048,
+					"price": 299
+				}
+			],
+			"secondary_storage": [],
+			"os": [
+				{
+					"name": "None (bring your own)",
+					"price": 0
+				},
+				{
+					"name": "Windows 11 Home (Download)",
+					"price": 145
+				},
+				{
+					"name": "Windows 11 Pro (Download)",
+					"price": 259
+				}
+			],
+			"power_adapter": [
+				{
+					"name": "None (bring your own)",
+					"watts": 0,
+					"price": 0
+				},
+				{
+					"name": "Power Adapter",
+					"watts": 60,
+					"price": 49
+				}
+			]
+		}
+	],
+	"13": [
+		{
+			"name": "AI 300 Series",
+			"price": 1059,
+			"cpu": [
+				{
+					"name": "Ryzen™ AI 5 340",
+					"cores": 6,
+					"speed": 4.8,
+					"price": 0
+				},
+				{
+					"name": "Ryzen™ AI 5 340",
+					"cores": 8,
+					"speed": 5.0,
+					"price": 400
+				},
+				{
+					"name": "Ryzen™ AI 9 HX 370",
+					"cores": 12,
+					"speed": 5.1,
+					"price": 880
+				}
+			],
+			"display": [
+				{
+					"name": "2.2K Display",
+					"size": 13.5,
+					"resolution": "2256 x 1504",
+					"refresh_rate": 60,
+					"price": 0
+				},
+				{
+					"name": "2.8K Display",
+					"size": 13.5,
+					"resolution": "2880 x 1920",
+					"refresh_rate": 120,
+					"price": 140
+				}
+			],
+			"ram": [
+				{
+					"name": "None (bring your own)",
+					"kit": "0 x 0",
+					"technology": "N/A",
+					"frequency": 0,
+					"price": 0
+				},
+				{
+					"size": 8,
+					"kit": "1 x 8",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 45
+				},
+				{
+					"size": 16,
+					"kit": "2 x 8",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 90
+				},
+				{
+					"size": 16,
+					"kit": "1 x 16",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 90
+				},
+				{
+					"size": 32,
+					"kit": "2 x 16",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 180
+				},
+				{
+					"size": 32,
+					"kit": "1 x 32",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 180
+				},
+				{
+					"size": 48,
+					"kit": "1 x 48",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 270
+				},
+				{
+					"size": 64,
+					"kit": "2 x 32",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 360
+				},
+				{
+					"size": 96,
+					"kit": "2 x 48",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 540
+				}
+			],
+			"primary_storage": [
+				{
+					"name": "None (bring your own)",
+					"size": 0,
+					"price": 0
+				},
+				{
+					"name": "WD_BLACK™ SN770M NVMe™",
+					"size": 500,
+					"price": 109
+				},
+				{
+					"name": "WD_BLACK™ SN770M NVMe™",
+					"size": 1024,
+					"price": 179
+				},
+				{
+					"name": "WD_BLACK™ SN770M NVMe™",
+					"size": 2048,
+					"price": 299
+				}
+			],
+			"secondary_storage": [],
+			"os": [
+				{
+					"name": "None (bring your own)",
+					"price": 0
+				},
+				{
+					"name": "Windows 11 Home (Download)",
+					"price": 145
+				},
+				{
+					"name": "Windows 11 Pro (Download)",
+					"price": 259
+				}
+			],
+			"power_adapter": [
+				{
+					"name": "None (bring your own)",
+					"watts": 0,
+					"price": 0
+				},
+				{
+					"name": "Power Adapter",
+					"watts": 60,
+					"price": 49
+				}
+			]
+		},
+		{
+			"name": "7040 Series",
+			"price": 909,
+			"cpu": [
+				{
+					"name": "7640U",
+					"cores": 6,
+					"speed": 4.9,
+					"price": 0
+				}
+			],
+			"display": [
+				{
+					"name": "2.2K Display",
+					"size": 13.5,
+					"resolution": "2256 x 1504",
+					"refresh_rate": 60,
+					"price": 0
+				},
+				{
+					"name": "2.8K Display",
+					"size": 13.5,
+					"resolution": "2880 x 1920",
+					"refresh_rate": 120,
+					"price": 140
+				}
+			],
+			"ram": [
+				{
+					"name": "None (bring your own)",
+					"kit": "0 x 0",
+					"technology": "N/A",
+					"frequency": 0,
+					"price": 0
+				},
+				{
+					"size": 8,
+					"kit": "1 x 8",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 45
+				},
+				{
+					"size": 16,
+					"kit": "2 x 8",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 90
+				},
+				{
+					"size": 16,
+					"kit": "1 x 16",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 90
+				},
+				{
+					"size": 32,
+					"kit": "2 x 16",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 180
+				},
+				{
+					"size": 32,
+					"kit": "1 x 32",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 180
+				},
+				{
+					"size": 48,
+					"kit": "1 x 48",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 270
+				},
+				{
+					"size": 64,
+					"kit": "2 x 32",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 360
+				},
+				{
+					"size": 96,
+					"kit": "2 x 48",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 540
+				}
+			],
+			"primary_storage": [
+				{
+					"name": "None (bring your own)",
+					"size": 0,
+					"price": 0
+				},
+				{
+					"name": "WD_BLACK™ SN7100 NVMe™",
+					"size": 500,
+					"price": 79
+				},
+				{
+					"name": "WD_BLACK™ SN7100 NVMe™",
+					"size": 1024,
+					"price": 115
+				},
+				{
+					"name": "WD_BLACK™ SN7100 NVMe™",
+					"size": 2048,
+					"price": 229
+				},
+				{
+					"name": "WD_BLACK™ SN7100 NVMe™",
+					"size": 4096,
+					"price": 379
+				},
+				{
+					"name": "WD_BLACK™ SN850X NVMe™",
+					"size": 1024,
+					"price": 139
+				},
+				{
+					"name": "WD_BLACK™ SN850X NVMe™",
+					"size": 2048,
+					"price": 269
+				},
+				{
+					"name": "WD_BLACK™ SN850X NVMe™",
+					"size": 4096,
+					"price": 390
+				},
+				{
+					"name": "WD_BLACK™ SN850X NVMe™",
+					"size": 8192,
+					"price": 815
+				}
+			],
+			"secondary_storage": [],
+			"os": [
+				{
+					"name": "None (bring your own)",
+					"price": 0
+				},
+				{
+					"name": "Windows 11 Home (Download)",
+					"price": 145
+				},
+				{
+					"name": "Windows 11 Pro (Download)",
+					"price": 259
+				}
+			],
+			"power_adapter": [
+				{
+					"name": "None (bring your own)",
+					"watts": 0,
+					"price": 0
+				},
+				{
+					"name": "Power Adapter",
+					"watts": 60,
+					"price": 49
+				}
+			]
+		},
+		{
+			"name": "Ultra Series 1",
+			"price": 939,
+			"cpu": [
+				{
+					"name": "Ultra 5 125H",
+					"cores": 12,
+					"speed": 4.5,
+					"price": 0
+				},
+				{
+					"name": "Ultra 7 155H",
+					"cores": 14,
+					"speed": 4.8,
+					"price": 370
+				},
+				{
+					"name": "Ultra 7 165H",
+					"cores": 14,
+					"speed": 5.0,
+					"price": 820
+				}
+			],
+			"display": [
+				{
+					"name": "2.2K Display",
+					"size": 13.5,
+					"resolution": "2256 x 1504",
+					"refresh_rate": 60,
+					"price": 0
+				},
+				{
+					"name": "2.8K Display",
+					"size": 13.5,
+					"resolution": "2880 x 1920",
+					"refresh_rate": 120,
+					"price": 140
+				}
+			],
+			"ram": [
+				{
+					"name": "None (bring your own)",
+					"kit": "0 x 0",
+					"technology": "N/A",
+					"frequency": 0,
+					"price": 0
+				},
+				{
+					"size": 8,
+					"kit": "1 x 8",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 45
+				},
+				{
+					"size": 16,
+					"kit": "2 x 8",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 90
+				},
+				{
+					"size": 16,
+					"kit": "1 x 16",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 90
+				},
+				{
+					"size": 32,
+					"kit": "2 x 16",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 180
+				},
+				{
+					"size": 32,
+					"kit": "1 x 32",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 180
+				},
+				{
+					"size": 48,
+					"kit": "1 x 48",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 270
+				},
+				{
+					"size": 64,
+					"kit": "2 x 32",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 360
+				},
+				{
+					"size": 96,
+					"kit": "2 x 48",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 540
+				}
+			],
+			"primary_storage": [
+				{
+					"name": "None (bring your own)",
+					"size": 0,
+					"price": 0
+				},
+				{
+					"name": "WD_BLACK™ SN7100 NVMe™",
+					"size": 500,
+					"price": 79
+				},
+				{
+					"name": "WD_BLACK™ SN7100 NVMe™",
+					"size": 1024,
+					"price": 115
+				},
+				{
+					"name": "WD_BLACK™ SN7100 NVMe™",
+					"size": 2048,
+					"price": 229
+				},
+				{
+					"name": "WD_BLACK™ SN7100 NVMe™",
+					"size": 4096,
+					"price": 379
+				},
+				{
+					"name": "WD_BLACK™ SN850X NVMe™",
+					"size": 1024,
+					"price": 139
+				},
+				{
+					"name": "WD_BLACK™ SN850X NVMe™",
+					"size": 2048,
+					"price": 269
+				},
+				{
+					"name": "WD_BLACK™ SN850X NVMe™",
+					"size": 4096,
+					"price": 390
+				},
+				{
+					"name": "WD_BLACK™ SN850X NVMe™",
+					"size": 8192,
+					"price": 815
+				}
+			],
+			"secondary_storage": [],
+			"os": [
+				{
+					"name": "None (bring your own)",
+					"price": 0
+				},
+				{
+					"name": "Windows 11 Home (Download)",
+					"price": 145
+				},
+				{
+					"name": "Windows 11 Pro (Download)",
+					"price": 259
+				}
+			],
+			"power_adapter": [
+				{
+					"name": "None (bring your own)",
+					"watts": 0,
+					"price": 0
+				},
+				{
+					"name": "Power Adapter",
+					"watts": 60,
+					"price": 49
+				}
+			]
+		}
+	],
+	"16": [
+		{
+			"name": "AI 300 Series",
+			"price": 1689,
+			"cpu": [
+				{
+					"name": "Ryzen™ AI 7 350",
+					"cores": 8,
+					"speed": 5,
+					"price": 0
+				},
+				{
+					"name": "Ryzen™ AI 9 HX 370",
+					"cores": 12,
+					"speed": 5.1,
+					"price": 340
+				}
+			],
+			"expansion_bay": [
+				{
+					"name": "Expansion Bay Shell",
+					"price": 0,
+					"vram": 0,
+					"vram_technology": "N/A",
+					"thickness": 0
+				},
+				{
+					"name": "Graphics Module (NVIDIA® GeForce RTX™ 5070)",
+					"price": 740,
+					"vram": 8,
+					"vram_technology": "GDDR7",
+					"thickness": 21.95
+				},
+				{
+					"name": "Graphics Module (AMD Radeon™ RX 7700S) (2nd Gen)",
+					"price": 400,
+					"vram": 8,
+					"vram_technology": "GDDR6",
+					"thickness": 21.95
+				}
+			],
+			"ram": [
+				{
+					"name": "None (bring your own)",
+					"kit": "0 x 0",
+					"technology": "N/A",
+					"frequency": 0,
+					"price": 0
+				},
+				{
+					"size": 8,
+					"kit": "1 x 8",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 45
+				},
+				{
+					"size": 16,
+					"kit": "1 x 16",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 90
+				},
+				{
+					"size": 16,
+					"kit": "2 x 8",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 90
+				},
+				{
+					"size": 32,
+					"kit": "1 x 32",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 180
+				},
+				{
+					"size": 32,
+					"kit": "2 x 16",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 180
+				},
+				{
+					"size": 48,
+					"kit": "1 x 48",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 270
+				},
+				{
+					"size": 64,
+					"kit": "2 x 32",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 360
+				},
+				{
+					"size": 96,
+					"kit": "2 x 48",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 540
+				}
+			],
+			"primary_storage": [
+				{
+					"name": "None (bring your own)",
+					"size": 0,
+					"price": 0
+				},
+				{
+					"name": "WD_BLACK™ SN7100 NVMe™",
+					"size": 500,
+					"price": 79
+				},
+				{
+					"name": "WD_BLACK™ SN7100 NVMe™",
+					"size": 1024,
+					"price": 115
+				},
+				{
+					"name": "WD_BLACK™ SN7100 NVMe™",
+					"size": 2048,
+					"price": 229
+				},
+				{
+					"name": "WD_BLACK™ SN7100 NVMe™",
+					"size": 4096,
+					"price": 379
+				},
+				{
+					"name": "WD_BLACK™ SN850X NVMe™",
+					"size": 1024,
+					"price": 139
+				},
+				{
+					"name": "WD_BLACK™ SN850X NVMe™",
+					"size": 2048,
+					"price": 269
+				},
+				{
+					"name": "WD_BLACK™ SN850X NVMe™",
+					"size": 4096,
+					"price": 390
+				},
+				{
+					"name": "WD_BLACK™ SN850X NVMe™",
+					"size": 8192,
+					"price": 815
+				}
+			],
+			"secondary_storage": [
+				{
+					"name": "None (bring your own)",
+					"size": 0,
+					"price": 0
+				},
+
+				{
+					"name": "WD_BLACK™ SN770M NVMe™",
+					"size": 500,
+					"price": 109
+				},
+				{
+					"name": "WD_BLACK™ SN770M NVMe™",
+					"size": 1024,
+					"price": 179
+				},
+				{
+					"name": "WD_BLACK™ SN770M NVMe™",
+					"size": 2048,
+					"price": 299
+				}
+			],
+			"os": [
+				{
+					"name": "None (bring your own)",
+					"price": 0
+				},
+				{
+					"name": "Windows 11 Home (Download)",
+					"price": 145
+				},
+				{
+					"name": "Windows 11 Pro (Download)",
+					"price": 259
+				}
+			],
+			"power_adapter": [
+				{
+					"name": "None (bring your own)",
+					"watts": 0,
+					"price": 0
+				},
+				{
+					"name": "Power Adapter",
+					"watts": 240,
+					"price": 120
+				}
+			]
+		},
+		{
+			"name": "7040 Series",
+			"price": 1459,
+			"cpu": [
+				{
+					"name": "Ryzen™ 7 7840HS",
+					"cores": 8,
+					"speed": 5.1,
+					"price": 0
+				},
+				{
+					"name": "Ryzen™ 9 7940HS",
+					"cores": 8,
+					"speed": 5.2,
+					"price": 230
+				}
+			],
+			"expansion_bay": [
+				{
+					"name": "Expansion Bay Shell",
+					"price": 0,
+					"vram": 0,
+					"vram_technology": "N/A",
+					"thickness": 0
+				},
+				{
+					"name": "Graphics Module (AMD Radeon™ RX 7700S) (1st Gen)",
+					"price": 429,
+					"vram": 8,
+					"vram_technology": "GDDR6",
+					"thickness": 21.95
+				}
+			],
+			"ram": [
+				{
+					"name": "None (bring your own)",
+					"kit": "0 x 0",
+					"technology": "N/A",
+					"frequency": 0,
+					"price": 0
+				},
+				{
+					"size": 8,
+					"kit": "1 x 8",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 45
+				},
+				{
+					"size": 16,
+					"kit": "1 x 16",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 90
+				},
+				{
+					"size": 16,
+					"kit": "2 x 8",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 90
+				},
+				{
+					"size": 32,
+					"kit": "1 x 32",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 180
+				},
+				{
+					"size": 32,
+					"kit": "2 x 16",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 180
+				},
+				{
+					"size": 48,
+					"kit": "1 x 48",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 270
+				},
+				{
+					"size": 64,
+					"kit": "2 x 32",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 360
+				},
+				{
+					"size": 96,
+					"kit": "2 x 48",
+					"technology": "DDR5",
+					"frequency": 5600,
+					"price": 540
+				}
+			],
+			"primary_storage": [
+				{
+					"name": "None (bring your own)",
+					"size": 0,
+					"price": 0
+				},
+				{
+					"name": "WD_BLACK™ SN7100 NVMe™",
+					"size": 500,
+					"price": 79
+				},
+				{
+					"name": "WD_BLACK™ SN7100 NVMe™",
+					"size": 1024,
+					"price": 115
+				},
+				{
+					"name": "WD_BLACK™ SN7100 NVMe™",
+					"size": 2048,
+					"price": 229
+				},
+				{
+					"name": "WD_BLACK™ SN850X NVMe™",
+					"size": 1024,
+					"price": 139
+				},
+				{
+					"name": "WD_BLACK™ SN850X NVMe™",
+					"size": 2048,
+					"price": 269
+				},
+				{
+					"name": "WD_BLACK™ SN850X NVMe™",
+					"size": 4096,
+					"price": 390
+				},
+				{
+					"name": "WD_BLACK™ SN850X NVMe™",
+					"size": 8192,
+					"price": 815
+				}
+			],
+			"secondary_storage": [
+				{
+					"name": "None (bring your own)",
+					"size": 0,
+					"price": 0
+				},
+
+				{
+					"name": "WD_BLACK™ SN770M NVMe™",
+					"size": 500,
+					"price": 109
+				},
+				{
+					"name": "WD_BLACK™ SN770M NVMe™",
+					"size": 1024,
+					"price": 179
+				},
+				{
+					"name": "WD_BLACK™ SN770M NVMe™",
+					"size": 2048,
+					"price": 299
+				}
+			],
+			"os": [
+				{
+					"name": "None (bring your own)",
+					"price": 0
+				},
+				{
+					"name": "Windows 11 Home (Download)",
+					"price": 145
+				},
+				{
+					"name": "Windows 11 Pro (Download)",
+					"price": 259
+				}
+			],
+			"power_adapter": [
+				{
+					"name": "None (bring your own)",
+					"watts": 0,
+					"price": 0
+				},
+				{
+					"name": "Power Adapter",
+					"watts": 240,
+					"price": 120
+				}
+			]
+		}
+	]
+}
