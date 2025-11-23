@@ -87,24 +87,67 @@ function Configure() {
 		label: string,
 		options: any[],
 		selectedIndex: number,
-		onChange: (index: number) => void,
-		formatLabel: (option: any) => string
+		onChange: (index: number) => void
 	) => (
 		<div className="mb-6">
-			<label className="block text-sm font-semibold text-gray-900 mb-2">
+			<label className="block text-2xl font-semibold text-gray-900 mb-3">
 				{label}
 			</label>
-			<select
-				value={selectedIndex}
-				onChange={(e) => onChange(Number(e.target.value))}
-				className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 bg-white text-gray-900"
-			>
+			<div className="gap-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
 				{options.map((option, index) => (
-					<option key={index} value={index} className="py-2">
-						{formatLabel(option)}
-					</option>
+					<button
+						key={index}
+						onClick={() => onChange(index)}
+						className={`p-4 border-2 rounded-lg text-left transition-all flex flex-col justify-end ${
+							selectedIndex === index
+								? "border-orange-500 bg-orange-50 shadow-md"
+								: "border-gray-200 bg-white hover:border-gray-300 hover:shadow-sm"
+						}`}
+					>
+						<h3 className="font-bold text-lg mb-2 text-gray-900">
+							{option.name ?? "Option"}
+						</h3>
+						<div className="text-sm text-gray-600 space-y-1">
+							{option.cores && <div>Cores: {option.cores}</div>}
+							{option.speed && <div>Up to {option.speed}GHz</div>}
+							{option.resolution && (
+								<div>{option.resolution}px</div>
+							)}
+							{option.refresh_rate && (
+								<div>{option.refresh_rate}Hz</div>
+							)}
+							{option.vram > 0 && (
+								<div>
+									{option.vram}GB {option.vram_technology}
+								</div>
+							)}
+							{option.size > 0 && (
+								<div>Capacity: {option.size}GB</div>
+							)}
+							{option.technology && option.frequency && (
+								<div>
+									{option.technology} {option.frequency}MHz
+								</div>
+							)}
+							{option.kit && <div>{option.kit}GB</div>}
+							{option.watts > 0 && <div>{option.watts}W</div>}
+						</div>
+						<div className="pt-3 border-t border-gray-200 mt-2 sticky bottom-0">
+							<span
+								className={`font-semibold font-framework-pixel ${
+									selectedIndex === index
+										? "text-orange-600"
+										: "text-gray-900"
+								}`}
+							>
+								{option.price > 0
+									? `+€${option.price}`
+									: "Included"}
+							</span>
+						</div>
+					</button>
 				))}
-			</select>
+			</div>
 		</div>
 	);
 
@@ -200,17 +243,7 @@ function Configure() {
 													setSelectedOptions({
 														...selectedOptions,
 														cpu: index,
-													}),
-												(option) =>
-													`${option.name} (${
-														option.cores
-													}, up to ${
-														option.speed
-													}GHz) ${
-														option.price > 0
-															? `+€${option.price}`
-															: ""
-													}`
+													})
 											)}
 
 										{currentConfig.display &&
@@ -222,39 +255,19 @@ function Configure() {
 													setSelectedOptions({
 														...selectedOptions,
 														display: index,
-													}),
-												(option) =>
-													`${option.name} (${
-														option.resolution
-													}, ${
-														option.refresh_rate
-													}Hz) ${
-														option.price > 0
-															? `+€${option.price}`
-															: ""
-													}`
+													})
 											)}
 
 										{currentConfig.expansion_bay &&
 											renderSelectField(
-												"Processor",
+												"Expansion Bay",
 												currentConfig.expansion_bay,
 												selectedOptions.expansion_bay,
 												(index) =>
 													setSelectedOptions({
 														...selectedOptions,
 														expansion_bay: index,
-													}),
-												(option) =>
-													`${option.name} ${
-														option.vram > 0
-															? `(${option.vram}GB ${option.vram_technology})`
-															: ""
-													}  ${
-														option.price > 0
-															? `+€${option.price}`
-															: ""
-													}`
+													})
 											)}
 
 										{currentConfig.ram &&
@@ -266,18 +279,7 @@ function Configure() {
 													setSelectedOptions({
 														...selectedOptions,
 														ram: index,
-													}),
-												(option) =>
-													option.name ||
-													`${option.size}GB ${
-														option.kit
-													} ${option.technology} ${
-														option.frequency
-													}MHz ${
-														option.price > 0
-															? `+€${option.price}`
-															: ""
-													}`
+													})
 											)}
 
 										{currentConfig.primary_storage &&
@@ -289,17 +291,7 @@ function Configure() {
 													setSelectedOptions({
 														...selectedOptions,
 														primary_storage: index,
-													}),
-												(option) =>
-													option.size > 0
-														? `${option.name} (${
-																option.size
-														  }GB) ${
-																option.price > 0
-																	? `+€${option.price}`
-																	: ""
-														  }`
-														: option.name
+													})
 											)}
 
 										{currentConfig.secondary_storage &&
@@ -314,17 +306,7 @@ function Configure() {
 														...selectedOptions,
 														secondary_storage:
 															index,
-													}),
-												(option) =>
-													option.size > 0
-														? `${option.name} (${
-																option.size
-														  }GB) ${
-																option.price > 0
-																	? `+€${option.price}`
-																	: ""
-														  }`
-														: option.name
+													})
 											)}
 
 										{currentConfig.os &&
@@ -336,16 +318,10 @@ function Configure() {
 													setSelectedOptions({
 														...selectedOptions,
 														os: index,
-													}),
-												(option) =>
-													`${option.name} ${
-														option.price > 0
-															? `+€${option.price}`
-															: ""
-													}`
+													})
 											)}
 
-										{currentConfig.os &&
+										{currentConfig.power_adapter &&
 											renderSelectField(
 												"Power Adapter",
 												currentConfig.power_adapter,
@@ -354,17 +330,7 @@ function Configure() {
 													setSelectedOptions({
 														...selectedOptions,
 														power_adapter: index,
-													}),
-												(option) =>
-													option.watts > 0
-														? `${option.name} (${
-																option.watts
-														  }W) ${
-																option.price > 0
-																	? `+€${option.price}`
-																	: ""
-														  }`
-														: option.name
+													})
 											)}
 
 										<div className="mt-8 pt-6 border-t border-gray-200">
