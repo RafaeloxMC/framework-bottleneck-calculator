@@ -26,7 +26,7 @@ export interface ConfigType {
 			name?: string;
 			size?: number;
 			kit: string;
-			technooloogy: string;
+			technology: string;
 			frequency: number;
 			price: number;
 		}>;
