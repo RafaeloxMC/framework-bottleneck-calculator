@@ -9,7 +9,7 @@ function Navbar() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
 	return (
-		<nav className="w-full bg-white shadow-sm">
+		<nav className="w-full bg-white shadow-sm shadow-white">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="flex justify-between items-center h-16">
 					<div className="shrink-0">

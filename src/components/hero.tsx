@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 function Hero() {
@@ -73,9 +74,9 @@ function Hero() {
 										</span>
 									</div>{" "}
 									<div className="flex flex-row flex-wrap mt-8 gap-2">
-										<a
+										<Link
 											className="focus:accent-blue whitespace-nowrap flex justify-center items-center transition-colors duration-300 ease-in-out hover:no-underline disabled:cursor-not-allowed font-semibold focus:outline-offset-2 focus:outline-2 focus:outline-accent-blue group rounded-full max-w-max min-w-min bg-primary text-on-primary hover:bg-primary-hover active:bg-primary-pressed no-underline"
-											href="/de/en/products/laptop16-diy-amd-ai300/configuration/new"
+											href="/#configure"
 										>
 											<span className="flex justify-center space-x-3 items-center py-2 px-4 rounded-full group-[.disabled]:invisible group-disabled:invisible">
 												<span>
@@ -88,10 +89,10 @@ function Hero() {
 												</span>
 											</span>
 											<span className="hidden absolute spinner group-[.disabled]:flex group-disabled:flex"></span>
-										</a>
-										<a
+										</Link>
+										<Link
 											className="focus:accent-blue whitespace-nowrap flex justify-center items-center transition-colors duration-300 ease-in-out hover:no-underline disabled:cursor-not-allowed font-semibold focus:outline-offset-2 focus:outline-2 focus:outline-accent-blue group rounded-full max-w-max min-w-min bg-transparent text-on-surface border-on-surface border no-underline"
-											href="/de/en/laptop16"
+											href="/#learnmore"
 										>
 											<span className="flex justify-center space-x-3 items-center py-2 px-4 rounded-full group-[.disabled]:invisible group-disabled:invisible">
 												<span>
@@ -104,7 +105,7 @@ function Hero() {
 												</span>
 											</span>
 											<span className="hidden absolute spinner group-[.disabled]:flex group-disabled:flex"></span>
-										</a>
+										</Link>
 									</div>
 								</div>
 							</div>

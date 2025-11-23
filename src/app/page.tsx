@@ -1,4 +1,6 @@
+import Configure from "@/components/configure";
 import Hero from "@/components/hero";
+import LearnMore from "@/components/learn-more";
 import Navbar from "@/components/navbar";
 
 export default function Home() {
@@ -9,6 +11,8 @@ export default function Home() {
 			</header>
 			<main>
 				<Hero />
+				<LearnMore />
+				<Configure />
 			</main>
 		</div>
 	);
