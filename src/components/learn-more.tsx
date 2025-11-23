@@ -3,7 +3,7 @@ import React from "react";
 function LearnMore() {
 	return (
 		<div
-			className="bg-white flex items-center justify-center"
+			className="bg-[#F5F5F4] flex items-center justify-center"
 			id="learnmore"
 		>
 			<div className="pt-12 lg:pt-16 pb-12 lg:pb-16 text-black container">

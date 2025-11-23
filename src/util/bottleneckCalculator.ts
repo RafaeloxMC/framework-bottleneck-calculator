@@ -57,7 +57,7 @@ export function analyzeBottlenecks(
 		warnings.push({
 			type: "error",
 			component: "RAM",
-			message: "RAM is required",
+			message: "Picking RAM is highly recommended",
 		});
 	}
 
@@ -65,7 +65,7 @@ export function analyzeBottlenecks(
 		warnings.push({
 			type: "error",
 			component: "Storage",
-			message: "Primary storage is required",
+			message: "Picking primary storage is highly recommended",
 		});
 	}
 
@@ -73,7 +73,7 @@ export function analyzeBottlenecks(
 		warnings.push({
 			type: "error",
 			component: "Power",
-			message: "Power adapter is required",
+			message: "Picking a power adapter is highly recommended",
 		});
 		return warnings;
 	}

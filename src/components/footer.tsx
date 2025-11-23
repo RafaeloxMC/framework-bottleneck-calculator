@@ -1,9 +1,8 @@
 import Link from "next/link";
-import React from "react";
 
 function Footer() {
 	return (
-		<div className="w-full h-full p-8">
+		<div className="bg-[#F5F5F4] w-full h-full p-8">
 			<div className="flex flex-row gap-4 items-center justify-center">
 				<div className="flex flex-col">
 					<h1 className="font-framework-pixel font-extrabold">
