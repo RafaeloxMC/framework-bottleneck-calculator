@@ -1,36 +1,31 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { ConfigType } from "@/util/types";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { analyzeBottlenecks } from "@/util/bottleneckCalculator";
+
+const INITIAL_OPTIONS = {
+	cpu: 0,
+	display: 0,
+	expansion_bay: 0,
+	ram: 0,
+	primary_storage: 0,
+	secondary_storage: 0,
+	os: 0,
+	power_adapter: 0,
+};
 
 function Configure() {
 	const [configData, setConfigData] = useState<ConfigType | null>(null);
-	const [selectedModel, setSelectedModel] = useState<string>("16");
-	const [selectedConfig, setSelectedConfig] = useState<number>(0);
-
-	const getInitialOptions = () => ({
-		cpu: 0,
-		display: 0,
-		expansion_bay: 0,
-		ram: 0,
-		primary_storage: 0,
-		secondary_storage: 0,
-		os: 0,
-		power_adapter: 0,
-	});
-
-	const [selectedOptions, setSelectedOptions] = useState(getInitialOptions());
+	const [selectedModel, setSelectedModel] = useState("16");
+	const [selectedConfig, setSelectedConfig] = useState(0);
+	const [selectedOptions, setSelectedOptions] = useState(INITIAL_OPTIONS);
 
 	useEffect(() => {
 		fetch("/data/configs.json")
 			.then((res) => res.json())
 			.then((data) => setConfigData(data))
 			.catch((err) => console.error("Failed to load configs:", err));
-	});
-
-	const resetOptions = () => {
-		setSelectedOptions(getInitialOptions());
-	};
+	}, []);
 
 	if (!configData) {
 		return (
@@ -50,42 +45,37 @@ function Configure() {
 	const currentModelConfigs = configData[selectedModel];
 	const currentConfig = currentModelConfigs?.[selectedConfig];
 
+	const bottleneckWarnings = currentConfig
+		? analyzeBottlenecks(currentConfig, selectedOptions)
+		: [];
+
 	const calculateTotal = () => {
 		if (!currentConfig) return 0;
-		let total = currentConfig.price;
 
-		if (currentConfig.cpu)
-			total += currentConfig.cpu[selectedOptions.cpu]?.price || 0;
-		if (currentConfig.display)
-			total += currentConfig.display[selectedOptions.display]?.price || 0;
-		if (currentConfig.expansion_bay)
-			total +=
-				currentConfig.expansion_bay[selectedOptions.expansion_bay]
-					?.price || 0;
+		const components = [
+			currentConfig.cpu?.[selectedOptions.cpu],
+			currentConfig.display?.[selectedOptions.display],
+			currentConfig.expansion_bay?.[selectedOptions.expansion_bay],
+			currentConfig.ram[selectedOptions.ram],
+			currentConfig.primary_storage[selectedOptions.primary_storage],
+			currentConfig.secondary_storage?.[
+				selectedOptions.secondary_storage
+			],
+			currentConfig.os[selectedOptions.os],
+			currentConfig.power_adapter[selectedOptions.power_adapter],
+		];
 
-		total += currentConfig.ram[selectedOptions.ram]?.price || 0;
-		total +=
-			currentConfig.primary_storage[selectedOptions.primary_storage]
-				?.price || 0;
-		if (
-			currentConfig.secondary_storage &&
-			currentConfig.secondary_storage.length > 0
-		)
-			total +=
-				currentConfig.secondary_storage[
-					selectedOptions.secondary_storage
-				]?.price || 0;
-		total += currentConfig.os[selectedOptions.os]?.price || 0;
-		total +=
-			currentConfig.power_adapter[selectedOptions.power_adapter]?.price ||
-			0;
-
-		return total;
+		return (
+			currentConfig.price +
+			components.reduce((sum, comp) => sum + (comp?.price ?? 0), 0)
+		);
 	};
+
+	type Option = Record<string, string | number | undefined>;
 
 	const renderSelectField = (
 		label: string,
-		options: any[],
+		options: Option[],
 		selectedIndex: number,
 		onChange: (index: number) => void
 	) => (
@@ -94,59 +84,69 @@ function Configure() {
 				{label}
 			</label>
 			<div className="gap-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-				{options.map((option, index) => (
-					<button
-						key={index}
-						onClick={() => onChange(index)}
-						className={`p-4 border-2 rounded-lg text-left transition-all flex flex-col justify-end ${
-							selectedIndex === index
-								? "border-orange-500 bg-orange-50 shadow-md"
-								: "border-gray-200 bg-white hover:border-gray-300 hover:shadow-sm"
-						}`}
-					>
-						<h3 className="font-bold text-lg mb-2 text-gray-900">
-							{option.name ?? "Option"}
-						</h3>
-						<div className="text-sm text-gray-600 space-y-1">
-							{option.cores && <div>Cores: {option.cores}</div>}
-							{option.speed && <div>Up to {option.speed}GHz</div>}
-							{option.resolution && (
-								<div>{option.resolution}px</div>
-							)}
-							{option.refresh_rate && (
-								<div>{option.refresh_rate}Hz</div>
-							)}
-							{option.vram > 0 && (
-								<div>
-									{option.vram}GB {option.vram_technology}
-								</div>
-							)}
-							{option.size > 0 && (
-								<div>Capacity: {option.size}GB</div>
-							)}
-							{option.technology && option.frequency && (
-								<div>
-									{option.technology} {option.frequency}MHz
-								</div>
-							)}
-							{option.kit && <div>{option.kit}GB</div>}
-							{option.watts > 0 && <div>{option.watts}W</div>}
-						</div>
-						<div className="pt-3 border-t border-gray-200 mt-2 sticky bottom-0">
-							<span
-								className={`font-semibold font-framework-pixel ${
-									selectedIndex === index
-										? "text-orange-600"
-										: "text-gray-900"
-								}`}
-							>
-								{option.price > 0
-									? `+€${option.price}`
-									: "Included"}
-							</span>
-						</div>
-					</button>
-				))}
+				{options.map((option, index) => {
+					const isSelected = selectedIndex === index;
+					return (
+						<button
+							key={index}
+							onClick={() => onChange(index)}
+							className={`p-4 border-2 rounded-lg text-left transition-all flex flex-col justify-end ${
+								isSelected
+									? "border-orange-500 bg-orange-50 shadow-md"
+									: "border-gray-200 bg-white hover:border-gray-300 hover:shadow-sm"
+							}`}
+						>
+							<h3 className="font-bold text-lg mb-2 text-gray-900">
+								{option.name || "Option"}
+							</h3>
+							<div className="text-sm text-gray-600 space-y-1">
+								{option.cores && (
+									<div>Cores: {option.cores}</div>
+								)}
+								{option.speed && (
+									<div>Up to {option.speed}GHz</div>
+								)}
+								{option.resolution && (
+									<div>{option.resolution}px</div>
+								)}
+								{option.refresh_rate && (
+									<div>{option.refresh_rate}Hz</div>
+								)}
+								{option.vram && Number(option.vram) > 0 && (
+									<div>
+										{option.vram}GB {option.vram_technology}
+									</div>
+								)}
+								{option.size && Number(option.size) > 0 && (
+									<div>Capacity: {option.size}GB</div>
+								)}
+								{option.technology && option.frequency && (
+									<div>
+										{option.technology} {option.frequency}
+										MHz
+									</div>
+								)}
+								{option.kit && <div>{option.kit}GB</div>}
+								{option.watts && Number(option.watts) > 0 && (
+									<div>{option.watts}W</div>
+								)}
+							</div>
+							<div className="pt-3 border-t border-gray-200 mt-2 sticky bottom-0">
+								<span
+									className={`font-semibold font-framework-pixel ${
+										isSelected
+											? "text-orange-600"
+											: "text-gray-900"
+									}`}
+								>
+									{Number(option.price) > 0
+										? `+€${option.price}`
+										: "Included"}
+								</span>
+							</div>
+						</button>
+					);
+				})}
 			</div>
 		</div>
 	);
@@ -181,7 +181,9 @@ function Configure() {
 											onClick={() => {
 												setSelectedModel(model);
 												setSelectedConfig(0);
-												resetOptions();
+												setSelectedOptions(
+													INITIAL_OPTIONS
+												);
 											}}
 											className={`w-full px-4 py-3 rounded-lg font-medium transition-colors ${
 												selectedModel === model
@@ -209,7 +211,9 @@ function Configure() {
 																setSelectedConfig(
 																	index
 																);
-																resetOptions();
+																setSelectedOptions(
+																	INITIAL_OPTIONS
+																);
 															}}
 															className={`w-full px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
 																selectedConfig ===
@@ -332,6 +336,89 @@ function Configure() {
 														power_adapter: index,
 													})
 											)}
+
+										{bottleneckWarnings.length > 0 && (
+											<div className="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
+												<h4 className="font-semibold text-lg mb-3 flex items-center gap-2">
+													Configuration Analysis
+												</h4>
+												<div className="space-y-2">
+													{bottleneckWarnings.map(
+														(warning, index) => (
+															<div
+																key={index}
+																className={`p-3 rounded-lg border shadow ${
+																	warning.type ===
+																	"error"
+																		? "bg-red-50 border-red-500 shadow-red-500"
+																		: warning.type ===
+																		  "warning"
+																		? "bg-yellow-50 border-yellow-500 shadow-yellow-500"
+																		: "bg-gray-100 border-gray-500 shadow-gray-500"
+																}`}
+															>
+																<div className="flex items-start gap-2">
+																	<div className="flex-1">
+																		<div className="flex flex-row gap-2">
+																			<span
+																				className={`font-semibold text-xs px-2 py-1 rounded ${
+																					warning.type ===
+																					"error"
+																						? "bg-red-600 text-white"
+																						: warning.type ===
+																						  "warning"
+																						? "bg-yellow-600 text-white"
+																						: "bg-gray-600 text-white"
+																				}`}
+																			>
+																				{
+																					warning.component
+																				}
+																			</span>
+																			<p
+																				className={`text-sm font-medium ${
+																					warning.type ===
+																					"error"
+																						? "text-red-900"
+																						: warning.type ===
+																						  "warning"
+																						? "text-yellow-900"
+																						: "text-gray-900"
+																				}`}
+																			>
+																				{
+																					warning.message
+																				}
+																			</p>
+																		</div>
+																		{warning.suggestion && (
+																			<p
+																				className={`text-xs mt-1 ${
+																					warning.type ===
+																					"error"
+																						? "text-red-700"
+																						: warning.type ===
+																						  "warning"
+																						? "text-yellow-700"
+																						: "text-gray-700"
+																				}`}
+																			>
+																				<span className="font-bold">
+																					Tip:
+																				</span>{" "}
+																				{
+																					warning.suggestion
+																				}
+																			</p>
+																		)}
+																	</div>
+																</div>
+															</div>
+														)
+													)}
+												</div>
+											</div>
+										)}
 
 										<div className="mt-8 pt-6 border-t border-gray-200">
 											<div className="flex justify-between items-center">
