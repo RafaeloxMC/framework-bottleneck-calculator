@@ -6,7 +6,7 @@ export default function Home() {
 			<header className="z-60 sticky inset-0 header-primary border-b bg-surface border-utility-outline-mild">
 				<Navbar />
 			</header>
-			<body>
+			<main>
 				<div className="bg-[#F5F5F4] flex items-center justify-center">
 					<div className="pt-4 lg:pt-6 pb-4 lg:pb-6 text-black container">
 						<div className="grid grid-cols-1 lg:grid-cols-12 lg:grid-flow-row-dense gap-y-4 gap-x-6">
@@ -21,7 +21,7 @@ export default function Home() {
 												loop={true}
 												muted={true}
 												preload="auto"
-												className="absolute h-full left-0 overflow-hidden top-0 z-0 relative rounded-xl"
+												className="h-full left-0 overflow-hidden top-0 z-0 relative rounded-xl"
 												poster="https://customer-gbu4wsrjcdamtxzc.cloudflarestream.com/2475d0688ab539894985de98161fea67/thumbnails/thumbnail.jpg"
 												autoPlay
 											></video>
@@ -33,7 +33,7 @@ export default function Home() {
 												loop={true}
 												muted={true}
 												preload="auto"
-												className="absolute h-full left-0 overflow-hidden top-0 z-0 relative rounded-xl"
+												className="h-full left-0 overflow-hidden top-0 z-0 relative rounded-xl"
 												poster="https://customer-gbu4wsrjcdamtxzc.cloudflarestream.com/aa9419a09ec07bc9bfafc2d7f494c2e0/thumbnails/thumbnail.jpg"
 												autoPlay
 											></video>
@@ -83,7 +83,7 @@ export default function Home() {
 											</div>{" "}
 											<div className="flex flex-row flex-wrap mt-8 gap-2">
 												<a
-													className="focus:accent-blue whitespace-nowrap block flex justify-center items-center transition-colors duration-300 ease-in-out hover:no-underline disabled:cursor-not-allowed font-semibold focus:outline focus:outline-offset-2 focus:outline-2 focus:outline-accent-blue group rounded-full max-w-max min-w-min bg-primary text-on-primary hover:bg-primary-hover active:bg-primary-pressed no-underline"
+													className="focus:accent-blue whitespace-nowrap flex justify-center items-center transition-colors duration-300 ease-in-out hover:no-underline disabled:cursor-not-allowed font-semibold focus:outline-offset-2 focus:outline-2 focus:outline-accent-blue group rounded-full max-w-max min-w-min bg-primary text-on-primary hover:bg-primary-hover active:bg-primary-pressed no-underline"
 													href="/de/en/products/laptop16-diy-amd-ai300/configuration/new"
 												>
 													<span className="flex justify-center space-x-3 items-center py-2 px-4 rounded-full group-[.disabled]:invisible group-disabled:invisible">
@@ -99,7 +99,7 @@ export default function Home() {
 													<span className="hidden absolute spinner group-[.disabled]:flex group-disabled:flex"></span>
 												</a>
 												<a
-													className="focus:accent-blue whitespace-nowrap block flex justify-center items-center transition-colors duration-300 ease-in-out hover:no-underline disabled:cursor-not-allowed font-semibold focus:outline focus:outline-offset-2 focus:outline-2 focus:outline-accent-blue group rounded-full max-w-max min-w-min bg-transparent text-on-surface border-on-surface border no-underline"
+													className="focus:accent-blue whitespace-nowrap flex justify-center items-center transition-colors duration-300 ease-in-out hover:no-underline disabled:cursor-not-allowed font-semibold focus:outline-offset-2 focus:outline-2 focus:outline-accent-blue group rounded-full max-w-max min-w-min bg-transparent text-on-surface border-on-surface border no-underline"
 													href="/de/en/laptop16"
 												>
 													<span className="flex justify-center space-x-3 items-center py-2 px-4 rounded-full group-[.disabled]:invisible group-disabled:invisible">
@@ -122,7 +122,7 @@ export default function Home() {
 						</div>
 					</div>
 				</div>
-			</body>
+			</main>
 		</div>
 	);
 }
