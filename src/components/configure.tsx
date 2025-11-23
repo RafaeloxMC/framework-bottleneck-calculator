@@ -185,10 +185,10 @@ function Configure() {
 													INITIAL_OPTIONS
 												);
 											}}
-											className={`w-full px-4 py-3 rounded-lg font-medium transition-colors ${
+											className={`w-full px-4 py-3 rounded-lg font-medium transition-colors border-2 shadow-md ${
 												selectedModel === model
-													? "bg-orange-600 text-white"
-													: "bg-gray-100 text-gray-900 hover:bg-gray-200"
+													? "border-orange-500 bg-orange-50"
+													: "border-gray-100 hover:bg-gray-100"
 											}`}
 										>
 											Framework Laptop {model}
@@ -215,11 +215,11 @@ function Configure() {
 																	INITIAL_OPTIONS
 																);
 															}}
-															className={`w-full px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+															className={`w-full px-4 py-3 rounded-lg font-medium transition-colors border-2 shadow-md ${
 																selectedConfig ===
 																index
-																	? "bg-orange-600 text-white"
-																	: "bg-gray-100 text-gray-900 hover:bg-gray-200"
+																	? "border-orange-500 bg-orange-50"
+																	: "border-gray-100 hover:bg-gray-100"
 															}`}
 														>
 															{config.name}
