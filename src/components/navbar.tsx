@@ -31,16 +31,28 @@ function Navbar() {
 
 					<div className="hidden lg:flex lg:items-center lg:space-x-1">
 						<div className="flex items-center space-x-1">
-							<Link href="/desktop" className="navbar-link">
+							<Link
+								href="https://frame.work/desktop"
+								className="navbar-link"
+							>
 								Desktop
 							</Link>
-							<Link href="/laptop12" className="navbar-link">
+							<Link
+								href="https://frame.work/laptop12"
+								className="navbar-link"
+							>
 								Laptop 12
 							</Link>
-							<Link href="/laptop13" className="navbar-link">
+							<Link
+								href="https://frame.work/laptop13"
+								className="navbar-link"
+							>
 								Laptop 13
 							</Link>
-							<Link href="/laptop16" className="navbar-link">
+							<Link
+								href="https://frame.work/laptop16"
+								className="navbar-link"
+							>
 								Laptop 16
 							</Link>
 						</div>
