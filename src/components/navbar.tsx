@@ -16,7 +16,7 @@ function Navbar() {
 						<Link
 							aria-label="Framework homepage"
 							title="Framework Home"
-							className="navbar-logo-link"
+							className="navbar-logo-link focus:ring-transparent focus:outline-none focus:ring-0 focus-visible:outline-none focus-visible:ring-0 select-none focus:shadow-none focus-visible:shadow-none"
 							href="/"
 						>
 							<Image
@@ -26,6 +26,9 @@ function Navbar() {
 								className="filter brightness-0 h-6 w-auto"
 								src="/logo-c1ae78bbc66fed63092c4b9c39c0258f27ab7e2938efc03883bb1a5c73f1a632.svg"
 							/>
+							<span className="select-none">
+								Bottleneck Calculator
+							</span>
 						</Link>
 					</div>
 

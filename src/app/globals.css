@@ -31,7 +31,7 @@ body {
 }
 
 .navbar-logo-link {
-	@apply focus:outline-none focus:ring-2 focus:ring-orange-500 rounded;
+	@apply focus:outline-none rounded;
 }
 
 @font-face {
